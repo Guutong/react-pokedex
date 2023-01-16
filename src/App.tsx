@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Pokemon } from './PokeDex/Pokemon.model';
+import { PokemonCard } from './PokeDex/PokemonCard/PokemonCard';
 
 function App() {
+  const pokemon: Pokemon = {
+    id: 1,
+    name: "bulbasaur",
+    image: "https://img.pokemondb.net/sprites/home/normal/bulbasaur.png",
+    types: ["grass", "potion"]
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ width: 300, padding: 20 }}>
+      <PokemonCard pokemon={pokemon} />
     </div>
   );
 }

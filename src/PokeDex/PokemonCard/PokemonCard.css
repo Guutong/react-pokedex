@@ -1,0 +1,216 @@
+.card {
+  display: flex;
+  background: #fbfbfb;
+  padding: 10px 20px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  transition: ease all 0.3s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02),
+    0 4px 8px rgba(0, 0, 0, 0.02), 0 8px 16px rgba(0, 0, 0, 0.02),
+    0 16px 32px rgba(0, 0, 0, 0.02), 0 32px 64px rgba(0, 0, 0, 0.02);
+  opacity: 1;
+}
+
+.card.hide {
+  display: none;
+}
+.card-active {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 6;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  padding-top: 40px;
+}
+.card-particle {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  /* animation: rotate360 15s linear both infinite; */
+  transform-origin: center;
+}
+.card-particle:before,
+.card-particle:after {
+  content: "";
+  position: absolute;
+  right: -25%;
+  top: -25%;
+  height: 90%;
+  width: 90%;
+  border-radius: 60%;
+  filter: blur(60px);
+  opacity: 0.2;
+  z-index: 0;
+  transition: ease all 0.5s;
+}
+.card-particle:after {
+  bottom: -25%;
+  left: -25%;
+  top: auto;
+  right: auto;
+}
+.card[data-type="fairy"] .card-particle:before {
+  background-color: #e69fb0;
+}
+.card[data-type="fairy"] .card-particle:after {
+  background-color: #ff8cd0;
+}
+.card[data-type="psychic"] .card-particle:before {
+  background-color: #9600f4;
+}
+.card[data-type="psychic"] .card-particle:after {
+  background-color: #64f4c0;
+}
+.card[data-type="fighting"] .card-particle:before {
+  background-color: #ffb46b;
+}
+.card[data-type="fighting"] .card-particle:after {
+  background-color: #bd6f22;
+}
+.card[data-type="ground"] .card-particle:before,
+.card[data-type="rock"] .card-particle:before {
+  background-color: #d2820e;
+}
+.card[data-type="ground"] .card-particle:after,
+.card[data-type="rock"] .card-particle:after {
+  background-color: #382203;
+}
+.card[data-type="electric"] .card-particle:before {
+  background-color: #ffd100;
+}
+.card[data-type="electric"] .card-particle:after {
+  background-color: #b29200;
+}
+.card[data-type="normal"] .card-particle:before {
+  background-color: #f4eeb8;
+}
+.card[data-type="normal"] .card-particle:after {
+  background-color: #c9cc99;
+}
+.card[data-type="grass"] .card-particle:before {
+  background-color: #67fc34;
+}
+.card[data-type="grass"] .card-particle:after {
+  background-color: #20fca3;
+}
+.card[data-type="dragon"] .card-particle:before {
+  background-color: #fa6c14;
+}
+.card[data-type="dragon"] .card-particle:after {
+  background-color: #ffac13;
+}
+.card[data-type="fire"] .card-particle:before {
+  background-color: #ff2e16;
+}
+.card[data-type="fire"] .card-particle:after {
+  background-color: #ff5c16;
+}
+.card[data-type="water"] .card-particle:before {
+  background-color: #08e3ff;
+}
+.card[data-type="water"] .card-particle:after {
+  background-color: #008aff;
+}
+.card[data-type="poison"] .card-particle:before,
+.card[data-type="ghost"] .card-particle:before {
+  background-color: #d49cfb;
+}
+.card[data-type="poison"] .card-particle:after,
+.card[data-type="ghost"] .card-particle:after {
+  background-color: #40a595;
+}
+.card[data-type="ice"] .card-particle:before {
+  background-color: #00ecf4;
+}
+.card[data-type="ice"] .card-particle:after {
+  background-color: #0270f4;
+}
+.card[data-type="bug"] .card-particle:before {
+  background-color: #77dc55;
+}
+.card[data-type="bug"] .card-particle:after {
+  background-color: #f5ee83;
+}
+.card:hover {
+  background: white;
+  cursor: pointer;
+}
+.card:hover .card-particle:before,
+.card:hover .card-particle:after {
+  opacity: 0.4;
+}
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+.card-image {
+  z-index: 1;
+  margin-top: -5px;
+  transition: ease all 0.3s;
+}
+.card-image img {
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.1));
+  max-width: 100%;
+}
+.card-name {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #383838;
+  text-transform: capitalize;
+  mix-blend-mode: color-burn;
+  z-index: 3;
+  text-align: center;
+  position: relative;
+}
+.card-number {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px 16px;
+  font-family: Montserrat, sans-serif;
+  color: #383838;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 3;
+  border-radius: 13.3333333333px;
+  font-size: 0.7rem;
+  backdrop-filter: blur(5px);
+}
+.card-types {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  padding: 0;
+}
+.card-types li {
+  margin: 0 5px;
+  padding: 8px 16px;
+  font-family: Montserrat, sans-serif;
+  color: #383838;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 3;
+  border-radius: 13.3333333333px;
+  font-size: 0.8rem;
+  backdrop-filter: blur(5px);
+  text-transform: capitalize;
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
