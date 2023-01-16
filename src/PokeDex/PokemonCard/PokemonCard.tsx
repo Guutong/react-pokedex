@@ -9,7 +9,7 @@ export function PokemonCard({ pokemon }: Props) {
   return (
     <div className="card" data-id={pokemon.id} data-name={pokemon.name} data-type={pokemon.types[0]}>
       <div className="card-image">
-        <img src={pokemon.image} alt="" />
+        <img src={pokemon.image} alt={pokemon.name} />
       </div>
       <div className="card-particle"></div>
       <div className="card-detail">
