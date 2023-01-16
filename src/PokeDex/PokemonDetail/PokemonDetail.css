@@ -1,0 +1,361 @@
+.poke-detail {
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  .poke-detail::-webkit-scrollbar * {
+    background: transparent;
+  }
+  .poke-detail::-webkit-scrollbar {
+    width: 10px;
+    height: 18px;
+    background-color: transparent;
+  }
+  .poke-detail::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    background-color: rgba(0, 0, 0, 0.15);
+    -webkit-border-radius: 7px;
+    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05),
+      inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+  }
+  .poke-detail::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  .poke-detail::-webkit-scrollbar-track {
+    display: none;
+  }
+  .poke-detail::-webkit-scrollbar-track-piece {
+    display: none;
+  }
+  .poke-detail::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+  .poke-detail-header {
+    padding: 40px;
+    background-size: cover;
+    background-position: center bottom;
+  }
+  .poke-detail-header[data-type="grass"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/grass.jpg);
+  }
+  .poke-detail-header[data-type="fire"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/fire.jpg);
+  }
+  .poke-detail-header[data-type="water"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/water.jpg);
+  }
+  .poke-detail-header[data-type="fighting"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/fighting.jpg);
+  }
+  .poke-detail-header[data-type="normal"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/normal.jpg);
+  }
+  .poke-detail-header[data-type="ghost"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/ghost.jpg);
+  }
+  .poke-detail-header[data-type="bug"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/bug.jpg);
+  }
+  .poke-detail-header[data-type="ground"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/ground.jpg);
+  }
+  .poke-detail-header[data-type="rock"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/rock.jpg);
+  }
+  .poke-detail-header[data-type="electric"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/electric.jpg);
+  }
+  .poke-detail-header[data-type="fairy"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/fairy.jpg);
+  }
+  .poke-detail-header[data-type="ice"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/ice.jpg);
+  }
+  .poke-detail-header[data-type="psychic"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/psychic.jpg);
+  }
+  .poke-detail-header[data-type="dragon"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/dragon.jpg);
+  }
+  .poke-detail-header[data-type="poison"] {
+    background-image: url(https://raw.githubusercontent.com/Guutong/pokedex-images/main/background/poison.jpg);
+  }
+  .poke-detail-header-arrow {
+    border: 0;
+    outline: none;
+    background: #fbfbfb;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    line-height: 100%;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #383838;
+    position: relative;
+    float: left;
+  }
+  .poke-detail-header-image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .poke-detail-header-image img {
+    max-width: 100%;
+    cursor: pointer;
+  }
+  .poke-detail-header-name {
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fbfbfb;
+    text-transform: capitalize;
+    position: relative;
+    z-index: 3;
+  }
+  .poke-detail-header-number {
+    float: right;
+    padding: 8px 16px;
+    font-family: Montserrat, sans-serif;
+    color: #383838;
+    background: #fbfbfb;
+    z-index: 3;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    margin-top: 0.2rem;
+  }
+  .poke-detail-header-types {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    padding: 0;
+  }
+  .poke-detail-header-types li {
+    margin: 0 10px;
+    padding: 8px 16px;
+    font-family: Montserrat, sans-serif;
+    color: #383838;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 3;
+    border-radius: 13.3333333333px;
+    font-size: 0.8rem;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    text-transform: capitalize;
+  }
+  .poke-detail-content {
+    padding: 10px;
+    border-radius: 40px;
+    margin-top: -30px;
+    padding: 30px 10px;
+    background: #fbfbfb;
+    position: relative;
+    min-height: 50vh;
+  }
+  @media (min-width: 375px) {
+    .poke-detail-content {
+      min-height: auto;
+    }
+  }
+  .poke-detail-content-resume {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+  }
+  .poke-detail-content-resume-item {
+    padding: 0.8rem;
+    color: #383838;
+    font-family: "Montserrat", sans-serif;
+    background: #fbfbfb;
+    border-right: 1px solid #d5d5d5;
+  }
+  .poke-detail-content-resume-item:last-child {
+    border: 0;
+  }
+  .poke-detail-content-resume-item .value {
+    text-align: center;
+    font-size: 1.1rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid #ebebeb;
+    text-transform: capitalize;
+  }
+  .poke-detail-content-resume-item .description {
+    color: #b8b8b8;
+    text-align: center;
+    font-size: 0.8rem;
+    padding-top: 0.2rem;
+  }
+  .poke-detail-content-stats {
+    padding: 25px 0;
+    margin: 15px 0;
+  }
+  .poke-detail-content-stats-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #383838;
+    font-family: "Montserrat", sans-serif;
+  }
+  .poke-detail-content-stats-progressbar-label {
+    padding: 10px 0 5px 5px;
+    font-family: "Montserrat", sans-serif;
+    color: #383838;
+    font-size: 0.8rem;
+  }
+  .poke-detail-content-stats-progressbar-progress {
+    background: #e2e2e2;
+    height: 15px;
+    position: relative;
+    border-radius: 40px;
+  }
+  .poke-detail-content-stats-progressbar-progress-bar {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    min-width: 2rem;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .poke-detail-content-stats-progressbar-progress-bar span {
+    font-size: 0.8rem;
+    color: #fbfbfb;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    padding: 5px;
+    line-height: 100%;
+    background: #383838;
+    border-radius: 8px;
+  }
+  .poke-detail-content-stats-progressbar-progress-bar-hp {
+    background: linear-gradient(to right, #d31027, #ea384d);
+  }
+  .poke-detail-content-stats-progressbar-progress-bar-attack {
+    background: linear-gradient(to right, #f46b45, #eea849);
+  }
+  .poke-detail-content-stats-progressbar-progress-bar-defense {
+    background: linear-gradient(to right, #f7971e, #ffd200);
+  }
+  .poke-detail-content-stats-progressbar-progress-bar-special-attack {
+    background: linear-gradient(to right, #95c4ff, #6ddcff);
+  }
+  .poke-detail-content-stats-progressbar-progress-bar-special-defense {
+    background: linear-gradient(to right, #1d976c, #93f9b9);
+  }
+  .poke-detail-content-stats-progressbar-progress-bar-speed {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+  }
+
+  .poke-detail-content-sw-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+  .poke-detail-content-sw-container-weakness,
+  .poke-detail-content-sw-container-strong {
+    font-family: "Montserrat", sans-serif;
+    color: #383838;
+    padding-bottom: 20px;
+  }
+  .poke-detail-content-sw-container-weakness h4,
+  .poke-detail-content-sw-container-strong h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 20px 0;
+  }
+  .poke-detail-content-sw-container-weakness ul,
+  .poke-detail-content-sw-container-strong ul {
+    padding: 0;
+  }
+  .poke-detail-content-sw-container-weakness ul li,
+  .poke-detail-content-sw-container-strong ul li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background: #bbb;
+    text-transform: capitalize;
+    border-radius: 20px;
+    color: #fbfbfb;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="normal"],
+  .poke-detail-content-sw-container-strong ul li[data-type="normal"] {
+    background: #a8a77a;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="fire"],
+  .poke-detail-content-sw-container-strong ul li[data-type="fire"] {
+    background: #ee8130;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="water"],
+  .poke-detail-content-sw-container-strong ul li[data-type="water"] {
+    background: #6390f0;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="electric"],
+  .poke-detail-content-sw-container-strong ul li[data-type="electric"] {
+    background: #f7d02c;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="grass"],
+  .poke-detail-content-sw-container-strong ul li[data-type="grass"] {
+    background: #7ac74c;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="ice"],
+  .poke-detail-content-sw-container-strong ul li[data-type="ice"] {
+    background: #96d9d6;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="fighting"],
+  .poke-detail-content-sw-container-strong ul li[data-type="fighting"] {
+    background: #c22e28;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="poison"],
+  .poke-detail-content-sw-container-strong ul li[data-type="poison"] {
+    background: #a33ea1;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="ground"],
+  .poke-detail-content-sw-container-strong ul li[data-type="ground"] {
+    background: #e2bf65;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="flying"],
+  .poke-detail-content-sw-container-strong ul li[data-type="flying"] {
+    background: #a98ff3;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="psychic"],
+  .poke-detail-content-sw-container-strong ul li[data-type="psychic"] {
+    background: #f95587;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="bug"],
+  .poke-detail-content-sw-container-strong ul li[data-type="bug"] {
+    background: #a6b91a;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="rock"],
+  .poke-detail-content-sw-container-strong ul li[data-type="rock"] {
+    background: #b6a136;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="ghost"],
+  .poke-detail-content-sw-container-strong ul li[data-type="ghost"] {
+    background: #735797;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="dragon"],
+  .poke-detail-content-sw-container-strong ul li[data-type="dragon"] {
+    background: #6f35fc;
+  }
+  .poke-detail-content-sw-container-weakness ul li[data-type="fairy"],
+  .poke-detail-content-sw-container-strong ul li[data-type="fairy"] {
+    background: #d685ad;
+  }
